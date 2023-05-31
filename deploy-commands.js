@@ -27,7 +27,7 @@ for (const folder of commandFolders) {
 // Construct and prepare an instance of the REST module
 const rest = new REST().setToken(token);
 
-// and deploy your commands!
+//and deploy your commands!
 (async () => {
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
@@ -43,3 +43,13 @@ const rest = new REST().setToken(token);
 		console.error(error);
 	}
 })();
+
+// for deleting a specific command
+// rest.delete(Routes.applicationGuildCommand(clientId, guildId, '1113106745431166977'))
+// 	.then(() => console.log('Successfully deleted application command'))
+// 	.catch(console.error);
+
+//delete all command 
+// rest.put(Routes.applicationCommands(clientId), { body: [] })
+// 	.then(() => console.log('Successfully deleted all guild commands.'))
+// 	.catch(console.error);
